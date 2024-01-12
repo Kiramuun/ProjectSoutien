@@ -5,9 +5,8 @@ using UnityEngine;
 public class ChangeCam : MonoBehaviour
 {
     public Camera[] cam = new Camera[2];
-    public GameObject text;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 3)
         {
@@ -15,13 +14,11 @@ public class ChangeCam : MonoBehaviour
             {
                 cam[1].gameObject.SetActive(true);
                 cam[0].gameObject.SetActive(false);
-                text.SetActive(true);
             }
             else
             {
                 cam[0].gameObject.SetActive(true);
                 cam[1].gameObject.SetActive(false);
-                text.SetActive(false);
             }
         }
     }

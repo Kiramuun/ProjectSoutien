@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class ButtonScript : MonoBehaviour
 {
-    public Animator _anim;
+    public Animator _animDoor;
+    Animator _animButton;
 
-    void OnCollisionEnter(Collision collision)
+    void Awake()
     {
-        if(collision.gameObject.layer == 3)
+        _animButton = GetComponent<Animator>();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == 3)
         {
-            _anim.SetTrigger("OpeningButton");
+            _animButton.SetTrigger("PressedButton");
+            if (_animButton.isActiveAndEnabled)
+            {
+                _animDoor.SetTrigger("OpeningDoor");
+            }
         }
     }
 }
