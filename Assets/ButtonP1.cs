@@ -16,7 +16,7 @@ public class ButtonP1 : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            _animButton.SetTrigger("PressedButton1");
+            _animButton.SetBool("PressedButton1", true);
         }
     }
 }

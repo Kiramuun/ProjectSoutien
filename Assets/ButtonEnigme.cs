@@ -19,18 +19,18 @@ public class ButtonEnigme : MonoBehaviour
         {
             _index = 1;
         }
-        if (_animButton[1].isActiveAndEnabled || _animButton[0].isActiveAndEnabled || _animButton[3].isActiveAndEnabled)
+        /*if (_animButton[1].isActiveAndEnabled || _animButton[0].isActiveAndEnabled || _animButton[3].isActiveAndEnabled)
         {
-            //_index = 0;
-        }
+            _index = 0;
+        }*/
 
         switch (_index)
         {
             case 0:
-                _animButton[0].SetTrigger("ErrorButton1");
-                _animButton[1].SetTrigger("ErrorButton1");
-                _animButton[2].SetTrigger("ErrorButton1");
-                _animButton[3].SetTrigger("ErrorButton1");
+                _animButton[0].SetBool("PressedButton1", false);
+                _animButton[1].SetBool("PressedButton2", false);
+                _animButton[2].SetBool("PressedButton3", false);
+                _animButton[3].SetBool("PressedButton4", false);
                 break;
 
             case 1:
